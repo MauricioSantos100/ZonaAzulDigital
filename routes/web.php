@@ -9,6 +9,8 @@ Route::get('/', [UsuarioController::class, 'index']);
 Route::get('/usuarios/create',[UsuarioController::class, 'create']);
 Route::post('/',[UsuarioController::class, 'store']);
 Route::get('/usuarios/{id}',[UsuarioController::class, 'show']);
+Route::get('/usuarios/{id}/edit',[UsuarioController::class, 'edit']);
+Route::put('/usuarios/{id}',[UsuarioController::class, 'update']);
 
 Route::get('/veiculos', [VeiculoController::class, 'index']);
 Route::get('/veiculos/create',[VeiculoController::class, 'create']);

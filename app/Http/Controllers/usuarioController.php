@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UsuarioRequest;
 use App\Models\UsuarioModel;
 
 class UsuarioController extends Controller {
@@ -26,7 +26,7 @@ class UsuarioController extends Controller {
         return view('newUsuario');
     }
 
-    public function store(Request $request) {
+    public function store(UsuarioRequest $request) {
         $cad = $this -> usuario -> create([
             'nome' => $request -> nome,
             'cpf' => $request -> cpf,
@@ -36,5 +36,20 @@ class UsuarioController extends Controller {
         if($cad){
             return redirect('/');
         }
+    }
+
+    public function edit($id) {
+        $usuario = $this -> usuario -> find($id);
+        return view('newUsuario', compact('usuario'));
+    }
+
+    public function update(UsuarioRequest $request, $id) {
+        $this -> usuario -> where(['id' => $id]) -> update([
+            'nome' => $request -> nome,
+            'cpf' => $request -> cpf,
+            'email' => $request -> email,
+            'telefone' => $request -> telefone
+        ]);
+        return redirect('/');
     }
 }

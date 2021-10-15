@@ -29,7 +29,7 @@
                         <a href="{{url("usuarios/$usuarios->id")}}">
                             <button class="btn btn-dark">Visualizar</button>
                         </a>
-                        <a href="">
+                        <a href="{{url("usuarios/$usuarios->id/edit")}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
                         <a href="">
