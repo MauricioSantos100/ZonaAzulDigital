@@ -16,7 +16,7 @@
     @endif
 
     @if(isset($usuario))
-      <form class="row g-3" name="formEditUsuario" id="formUsuario" method="post" action={{url('/$usuario->id')}}>
+      <form class="row g-3" name="formEditUsuario" id="formUsuario" method="post" action={{url('usuario/$usuario->id')}}>
         @method('PUT')
     @else
       <form class="row g-3" name="formCadUsuario" id="formUsuario" method="post" action={{url('/')}}>

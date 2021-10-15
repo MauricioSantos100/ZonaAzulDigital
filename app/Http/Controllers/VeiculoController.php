@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ModelVeiculo;
 use App\Models\UsuarioModel;
-use Illuminate\Http\Request;
+use App\Http\Requests\VeiculoRequest;
 
 
 class VeiculoController extends Controller
@@ -43,10 +43,10 @@ class VeiculoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\VeiculoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VeiculoRequest $request)
     {
         $cad=$this->veiculo->create([
             'marca'=>$request->marca,
@@ -87,11 +87,11 @@ class VeiculoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\VeiculoRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(VeiculoRequest $request, $id)
     {
         //
     }
