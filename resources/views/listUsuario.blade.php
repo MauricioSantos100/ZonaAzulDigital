@@ -7,7 +7,7 @@
       <h1>Usuarios</h1>
     </div>
     <div class="col-lg-12" style="text-align: right;">
-        <a href="">
+        <a href="{{url("usuarios/create")}}">
             <button class="btn btn-success">Cadastrar</button>
         </a>
     </div>
@@ -16,21 +16,17 @@
             <tr>
             <th scope="col">Id</th>
             <th scope="col">Nome</th>
-            <th scope="col">CPF</th>
-            <th scope="col">Email</th>
             <th scope="col">Telefone</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($user as $users)
+            @foreach($usuario as $usuarios)
                 <tr>
-                    <th scope="row">{{$users -> id}}</th>
-                    <th>{{$users -> nome}}</th>
-                    <th>{{$users -> cpf}}</th>
-                    <th>{{$users -> email}}</th>
-                    <th>{{$users -> telefone}}</th>
+                    <th scope="row">{{$usuarios -> id}}</th>
+                    <th>{{$usuarios -> nome}}</th>
+                    <th>{{$usuarios -> telefone}}</th>
                     <th>
-                        <a href="{{url("users/$users->id")}}">
+                        <a href="{{url("usuarios/$usuarios->id")}}">
                             <button class="btn btn-dark">Visualizar</button>
                         </a>
                         <a href="">
