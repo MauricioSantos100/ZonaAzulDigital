@@ -4,10 +4,10 @@
 
 <div class="container">
     <div class="text-center">
-      <h1>Usuarios</h1>
+      <h1>Veículos</h1>
     </div>
     <div class="col-lg-12" style="text-align: right;">
-        <a href="{{url("users/create")}}">
+        <a href="{{url("veiculos/create")}}">
             <button class="btn btn-success">Cadastrar</button>
         </a>
     </div>
@@ -15,22 +15,24 @@
         <thead>
             <tr>
             <th scope="col">Id</th>
-            <th scope="col">Nome</th>
-            <th scope="col">CPF</th>
-            <th scope="col">Email</th>
-            <th scope="col">Telefone</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Ano</th>
+            <th scope="col">Cor</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($user as $users)
+            @foreach($veiculo as $veiculos)
                 <tr>
-                    <th scope="row">{{$users -> id}}</th>
-                    <th>{{$users -> nome}}</th>
-                    <th>{{$users -> cpf}}</th>
-                    <th>{{$users -> email}}</th>
-                    <th>{{$users -> telefone}}</th>
+                    <th scope="row">{{$veiculos -> id}}</th>
+                    <th>{{$veiculos -> marca}}</th>
+                    <th>{{$veiculos -> modelo}}</th>
+                    <th>{{$veiculos -> placa}}</th>
+                    <th>{{$veiculos -> ano}}</th>
+                    <th>{{$veiculos -> cor}}</th>
                     <th>
-                        <a href="{{url("users/$users->id")}}">
+                        <a href="{{url("veiculos/$veiculos->id")}}">
                             <button class="btn btn-dark">Visualizar</button>
                         </a>
                         <a href="">

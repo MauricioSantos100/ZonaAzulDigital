@@ -9,5 +9,10 @@ class UserModel extends Model
 {
     use HasFactory;
 
-    protected $table='User';
+    protected $table = 'User';
+
+    public function relVeiculo()
+    {
+        return $this->hasMany('App\Models\ModelVeiculo', 'id_user');
+    }
 }
