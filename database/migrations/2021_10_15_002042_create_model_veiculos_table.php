@@ -15,8 +15,8 @@ class CreateModelVeiculosTable extends Migration
     {
         Schema::create('veiculo', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('id_usuario')->unsigned();
+            $table->foreign('id_usuario')->references('id')->on('usuario')->onDelete('cascade')->onUpdate('cascade');
             $table->string('marca');
             $table->string('modelo');
             $table->string('placa');

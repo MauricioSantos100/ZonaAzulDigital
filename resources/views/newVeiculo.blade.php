@@ -33,10 +33,10 @@
       <input type="text" class="form-control" name="cor" id="cor">
     </div>
 
-    <select class="form-control" name="id_user" id="id_user">
+    <select class="form-control" name="id_usuario" id="id_usuario">
       <option value="">Usuario</option>
-      @foreach($users as $user)
-      <option value="{{$user->id}}">{{$user->nome}}</option>
+      @foreach($usuarios as $usuario)
+      <option value="{{$usuario->id}}">{{$usuario->nome}}</option>
       @endforeach
     </select>
 

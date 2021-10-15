@@ -11,10 +11,10 @@ class ModelVeiculo extends Model
 
     protected $table='Veiculo';
 
-    protected $fillable=['marca','id_user','modelo','placa', 'ano', 'cor'];
+    protected $fillable=['marca','id_usuario','modelo','placa', 'ano', 'cor'];
 
-    public function relUsers()
+    public function relUsuarios()
     {
-        return $this->hasOne('App\User','id','id_user');
+        return $this->hasOne('App\usuario','id','id_usuario');
     }
 }

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\ModelVeiculo;
-use App\Models\UserModel;
+use App\Models\UsuarioModel;
 use Illuminate\Http\Request;
 
 
 class VeiculoController extends Controller
 {
     private $veiculo;
-    private $user;
+    private $usuario;
 
     public function __construct() {
         $this -> veiculo = new ModelVeiculo();
-        $this -> user = new UserModel();
+        $this -> usuario = new UsuarioModel();
     }
 
     /**
@@ -35,8 +35,8 @@ class VeiculoController extends Controller
      */
     public function create()
     {
-        $users=$this->user->all();
-        return view('newVeiculo',compact('users'));
+        $usuarios=$this->usuario->all();
+        return view('newVeiculo',compact('usuarios'));
         // return view(view: 'newVeiculo');
     }
 
@@ -54,7 +54,7 @@ class VeiculoController extends Controller
             'placa'=>$request->placa,
             'ano'=>$request->ano,
             'cor'=>$request->cor,
-            'id_user'=>$request->id_user
+            'id_usuario'=>$request->id_usuario
          ]);
          if($cad){
              return redirect('veiculos');
