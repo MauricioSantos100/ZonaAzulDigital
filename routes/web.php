@@ -23,4 +23,6 @@ Route::get('/estacionamentos', [EstacionamentoController::class, 'index']);
 Route::get('/estacionamentos/create',[EstacionamentoController::class, 'create']);
 Route::post('/estacionamentos',[EstacionamentoController::class, 'store']);
 Route::get('/estacionamentos/{id}',[EstacionamentoController::class, 'show']);
+Route::get('/estacionamentos/{id}/edit',[EstacionamentoController::class, 'edit']);
+Route::put('/estacionamentos/{id}',[EstacionamentoController::class, 'update']);
 Route::delete('/estacionamentos/{id}',[EstacionamentoController::class, 'destroy']);

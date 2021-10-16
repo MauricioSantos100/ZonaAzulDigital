@@ -49,7 +49,8 @@ class EstacionamentoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $estacionamento = $this->estacionamento->find($id);
+        return view('newEstacionamento', compact('estacionamento'));
     }
 
     /**
@@ -61,7 +62,18 @@ class EstacionamentoController extends Controller
      */
     public function update(EstacionamentoRequest $request, $id)
     {
-        //
+        $edt = $this -> estacionamento -> where(['id' => $id]) -> update([
+            'nome' => $request -> nome,
+            'email' => $request -> email,
+            'telefone' => $request -> telefone,
+            'rua' => $request -> rua,
+            'bairro' => $request -> bairro,
+            'cidade' => $request -> cidade,
+            'numero' => $request -> numero,
+        ]);
+        if($edt){
+            return redirect('/estacionamentos');
+        }
     }
 
     /**
