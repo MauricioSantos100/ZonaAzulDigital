@@ -104,6 +104,7 @@ class VeiculoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del = $this->veiculo->destroy($id);
+        return ($del) ? "sim" : "não";
     }
 }

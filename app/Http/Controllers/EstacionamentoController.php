@@ -72,6 +72,7 @@ class EstacionamentoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del = $this->estacionamento->destroy($id);
+        return ($del) ? "sim" : "não";
     }
 }

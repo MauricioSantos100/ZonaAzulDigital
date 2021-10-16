@@ -11,6 +11,7 @@
             <button class="btn btn-success">Cadastrar</button>
         </a>
     </div>
+    @csrf
     <table class="table table-striped">
         <thead>
             <tr>
@@ -32,7 +33,7 @@
                         <a href="{{url("usuarios/$usuarios->id/edit")}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
-                        <a href="">
+                        <a href="{{url("usuarios/$usuarios->id")}}" class="js-del">
                             <button class="btn btn-danger">deletar</button>
                         </a>
                     </th>
