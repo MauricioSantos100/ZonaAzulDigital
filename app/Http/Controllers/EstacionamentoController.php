@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\EstacionamentoModel;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\EstacionamentoRequest;
 
 class EstacionamentoController extends Controller
 {
@@ -26,7 +26,7 @@ class EstacionamentoController extends Controller
         return view('newEstacionamento');
     }
 
-    public function store(Request $request) {
+    public function store(EstacionamentoRequest $request) {
         $cad = $this -> estacionamento -> create([
             'cnpj' => $request -> cnpj,
             'nome' => $request -> nome,
@@ -55,11 +55,11 @@ class EstacionamentoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\EstacionamentoRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EstacionamentoRequest $request, $id)
     {
         //
     }

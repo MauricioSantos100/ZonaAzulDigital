@@ -6,6 +6,15 @@
   <div class="text-center">
     <h1>Novo Estacionamento</h1>
   </div>
+
+    @if(isset($errors) && count($errors)>0)
+      <div class="text-center mt-4 mb-4 p-2 alert-danger">
+          @foreach($errors->all() as $erro)
+              {{$erro}}<br>
+          @endforeach
+      </div>
+    @endif
+
   <form name="formCad" id="formCad" method="post" action="{{url('estacionamentos')}}" class="row g-3">
     @csrf
     <div class="col-12">
