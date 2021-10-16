@@ -25,7 +25,7 @@ class UsuarioRequest extends FormRequest
     {
         return [
             'nome' => 'required',
-            'cpf' => 'required',
+            'cpf' => 'required|numeric',
             'email' => 'required|email:rfc,dns',
             'telefone' => 'required|numeric'
         ];

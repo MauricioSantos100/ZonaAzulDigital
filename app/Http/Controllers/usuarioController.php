@@ -44,12 +44,14 @@ class UsuarioController extends Controller {
     }
 
     public function update(UsuarioRequest $request, $id) {
-        $this -> usuario -> where(['id' => $id]) -> update([
+        $edt = $this -> usuario -> where(['id' => $id]) -> update([
             'nome' => $request -> nome,
             'cpf' => $request -> cpf,
             'email' => $request -> email,
             'telefone' => $request -> telefone
         ]);
-        return redirect('/');
+        if($edt){
+            return redirect('/');
+        }
     }
 }
