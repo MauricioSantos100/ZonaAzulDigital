@@ -17,6 +17,8 @@ Route::get('/veiculos', [VeiculoController::class, 'index']);
 Route::get('/veiculos/create',[VeiculoController::class, 'create']);
 Route::post('/veiculos',[VeiculoController::class, 'store']);
 Route::get('/veiculos/{id}',[VeiculoController::class, 'show']);
+Route::get('/veiculos/{id}/edit',[VeiculoController::class, 'edit']);
+Route::put('/veiculos/{id}',[VeiculoController::class, 'update']);
 Route::delete('/veiculos/{id}',[VeiculoController::class, 'destroy']);
 
 Route::get('/estacionamentos', [EstacionamentoController::class, 'index']);

@@ -36,7 +36,7 @@
                         <a href="{{url("veiculos/$veiculos->id")}}">
                             <button class="btn btn-dark">Visualizar</button>
                         </a>
-                        <a href="">
+                        <a href="{{url("veiculos/$veiculos->id/edit")}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
                         <a href="{{url("veiculos/$veiculos->id")}}" href="" class="js-del">
